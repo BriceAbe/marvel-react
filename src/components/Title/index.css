@@ -12,3 +12,10 @@
   font-size: 34px;
   font-weight: bold;
 }
+
+.search-button {
+  width: 300px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+}

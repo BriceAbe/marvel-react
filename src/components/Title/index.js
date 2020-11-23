@@ -73,6 +73,7 @@ const Title = ({
       <h1>{titre}</h1>{" "}
       {inputsearch ? (
         <input
+          className="search-button"
           type="text"
           placeholder="search"
           value={search}
