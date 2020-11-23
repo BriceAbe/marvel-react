@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useHistory, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Comic from "../Comic";
 
 import "./index.css";
@@ -15,9 +15,12 @@ const ComicDetails = () => {
 
   const fetchDataComics = async () => {
     try {
-      const response = await axios.post(`http://localhost:3000/comics/`, {
-        id: id,
-      });
+      const response = await axios.post(
+        `https://marvel-backendbybrice.herokuapp.com/comics/`,
+        {
+          id: id,
+        }
+      );
 
       setComics(response.data.data);
       console.log(comics);

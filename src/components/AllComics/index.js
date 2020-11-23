@@ -13,7 +13,9 @@ const AllComics = () => {
 
   const fetchAxios = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/comics");
+      const response = await axios.get(
+        "https://marvel-backendbybrice.herokuapp.com/comics"
+      );
 
       setComics(response.data.data.results);
       setnumberPages((Number(response.data.data.total) / 100).toFixed());
@@ -26,7 +28,7 @@ const AllComics = () => {
   const fetchFavorites = async () => {
     try {
       const getFavorites = await axios.get(
-        "http://localhost:3000/getFavorites"
+        "https://marvel-backendbybrice.herokuapp.com/getFavorites"
       );
 
       const mapping = getFavorites.data.favoritesComics.map(
@@ -46,10 +48,13 @@ const AllComics = () => {
   const pagination = [];
   const paginationfetchAxios = async (limit, offset) => {
     try {
-      const response = await axios.post("http://localhost:3000/comicsPage", {
-        limit: limit,
-        offset: offset,
-      });
+      const response = await axios.post(
+        "https://marvel-backendbybrice.herokuapp.com/comicsPage",
+        {
+          limit: limit,
+          offset: offset,
+        }
+      );
 
       setComics(response.data.data.results);
 

@@ -15,7 +15,7 @@ const Favorites = () => {
   const fetchFavorites = async () => {
     try {
       const getFavorites = await axios.post(
-        "http://localhost:3000/getFavorites",
+        "https://marvel-backendbybrice.herokuapp.com/getFavorites",
         {
           token: token,
         }

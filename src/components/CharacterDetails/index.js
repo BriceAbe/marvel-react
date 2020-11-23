@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useHistory, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Character from "../Character";
 
 import "./index.css";
@@ -15,9 +15,12 @@ const CharacterDetails = () => {
   console.log(description);
   const fetchDataCharacter = async () => {
     try {
-      const response = await axios.post(`http://localhost:3000/character/`, {
-        id: id,
-      });
+      const response = await axios.post(
+        `https://marvel-backendbybrice.herokuapp.com/character/`,
+        {
+          id: id,
+        }
+      );
 
       setCharacters(response.data.data);
 

@@ -30,7 +30,7 @@ const Comic = ({ id, image, description, title, sizeS, favorite }) => {
       formData.append("favorite", true);
       formData.append("token", token);
       const response = await axios.post(
-        "http://localhost:3000/addFavorisComics",
+        "https://marvel-backendbybrice.herokuapp.com/addFavorisComics",
         formData
       );
       setFavory(response.data);
