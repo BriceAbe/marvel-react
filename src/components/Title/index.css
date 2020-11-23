@@ -1,0 +1,14 @@
+.titre-bar {
+  width: 100vw;
+  /* width: 1316px; */
+  height: 100px;
+  /* background-color: #0f0f0f; */
+  color: white;
+  font-size: 34px;
+  background: url("./loading.png");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 34px;
+  font-weight: bold;
+}

@@ -1,0 +1,45 @@
+p {
+  color: white;
+  font-size: 18px;
+}
+
+.container-comics-characters {
+  width: 300px;
+  height: 608px;
+  opacity: 0.9;
+
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.358);
+}
+
+.comics-characters {
+  width: 200px;
+  height: 100px;
+  background-color: black;
+}
+
+.comics-text {
+  width: 700px;
+  height: 100px;
+}
+.container-description-character {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 700px;
+}
+.main-desc {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 100wh;
+}
+.img-comic {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 3px;
+  border: 2px solid red;
+}

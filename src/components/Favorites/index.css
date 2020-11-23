@@ -1,0 +1,24 @@
+.container-favorites-comics {
+  width: 100vw;
+  height: 710px;
+  display: flex;
+  overflow: hidden;
+  overflow-x: scroll;
+}
+
+.chargement {
+  width: 100vw;
+  height: 100vh;
+}
+.container-fav {
+  width: 100vw;
+  height: 350px;
+  display: flex;
+
+  overflow: hidden;
+  overflow-x: scroll;
+}
+
+h3 {
+  color: white;
+}

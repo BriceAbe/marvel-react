@@ -1,0 +1,109 @@
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
+
+
+const Home = () => {
+  const [characters, setCharacters] = useState("");
+  const [isLoading, setisLoading] = useState(true);
+  const fetchAxios = async () => {
+    try {
+      const response = await axios.get("http://localhost:3000/");
+
+      setCharacters(response.data.data.results);
+      console.log(response.data);
+
+      setisLoading(false);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  useEffect(() => {
+    fetchAxios();
+  }, []);
+
+  const pagination = [];
+  const paginationfetchAxios = async (limit, offset) => {
+    try {
+      const response = await axios.post("http://localhost:3000/", {
+        limit: limit,
+        offset: offset,
+      });
+
+      setCharacters(response.data.data.results);
+      console.log(response.data);
+
+      setisLoading(false);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+  for (let i = 0; i < 15; i++) {
+    let offset = 0;
+    if (i === 0) {
+      offset = 0;
+    } else {
+      offset = i * 100;
+    }
+    const limit = 100;
+    pagination.push(
+      <h2 onClick={() => paginationfetchAxios(limit, offset)}>{i + 1}</h2>
+    );
+  }
+  return isLoading ? (
+    <>
+      <CenteredSlides />
+      <img
+        className="loading"
+        src="https://media.giphy.com/media/3GnKKEw2v7bXi/source.gif"
+        alt=""
+      />
+    </>
+  ) : (
+    <div className="home">
+      jbjbjbj
+      <div className="header">
+        {/* <img className="logo" src="" alt="" />
+        <input className="input" type="text" />
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul> */}
+      </div>
+      <div className="container-characters">
+        <div className="characters">
+          {characters.map((elem) => (
+            <Link
+              className="container-character"
+              to={{
+                pathname: "/character",
+                state: {
+                  id: elem.id,
+                  image: elem.thumbnail.path + "." + elem.thumbnail.extension,
+                  description: elem.description,
+                  name: elem.name,
+                },
+              }}
+            >
+              {/* <div key={elem.id} className="comics"> */}
+              {/* <h1>{elem.name}</h1> */}
+
+              <img
+                src={elem.thumbnail.path + "." + elem.thumbnail.extension}
+                alt=""
+              />
+              {/* </div> */}
+            </Link>
+          ))}
+        </div>
+      </div>
+      {/* <div className="pagination">{pagination}</div>
+      <div className="footer"></div> */}
+    </div>
+  );
+};
+
+export default Home;

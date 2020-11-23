@@ -1,0 +1,30 @@
+.container-comics {
+  width: 100vw;
+  height: 710px;
+  display: flex;
+  overflow: hidden;
+  overflow-x: scroll;
+}
+
+.chargement {
+  width: 100vw;
+  height: 100vh;
+}
+
+.pagination {
+  display: flex;
+  color: red;
+  width: 500px;
+  padding-top: 20px;
+  overflow: hidden;
+  overflow: auto;
+}
+
+.bouton-page {
+  border: 2px solid red;
+  border-radius: 50%;
+  cursor: pointer;
+  color: red;
+  padding: 3px;
+  margin-right: 3px;
+}

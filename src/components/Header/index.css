@@ -1,0 +1,60 @@
+.header {
+  display: flex;
+
+  width: 100vw;
+  height: 80px;
+  background-color: black;
+}
+.header-contenu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 1024px;
+  height: 80px;
+  background-color: black;
+  color: white;
+}
+
+.lien {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.lien:hover {
+  color: lightgray;
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: font-size 1s;
+}
+.deconnect {
+  background-color: red;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.signin {
+  background-color: white;
+  color: green;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.signup {
+  background-color: green;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+
+  padding: 10px;
+}
+.logo {
+  width: 80px;
+  height: 80px;
+}
