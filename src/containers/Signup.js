@@ -11,11 +11,14 @@ const Signup = ({ userToken, loguer, setloguer }) => {
 
   const fetchAxios = async () => {
     try {
-      const response = await axios.post("http://localhost:3000/user/signup", {
-        email: email,
-        username: username,
-        password: password,
-      });
+      const response = await axios.post(
+        "https://marvel-backendbybrice.herokuapp.com/user/signup",
+        {
+          email: email,
+          username: username,
+          password: password,
+        }
+      );
       Cookie.set("id", response.data._id);
       userToken(response.data.token);
     } catch (error) {
@@ -27,7 +30,7 @@ const Signup = ({ userToken, loguer, setloguer }) => {
   const handleSubmit = (e) => {
     fetchAxios();
     e.preventDefault();
-    setloguer(true);
+
     history.push("/");
   };
 
@@ -48,7 +51,6 @@ const Signup = ({ userToken, loguer, setloguer }) => {
 
   return (
     <div className="App">
-      <h2 className="signup-h2">S'inscrire</h2>
       <form className="signup-form" onSubmit={handleSubmit}>
         <input
           className="signup-input"
